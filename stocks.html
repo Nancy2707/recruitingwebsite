@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+</head>
+<style>
+    table {
+        border: 1px solid black;
+        padding: 20px;
+        width: 50rem;
+    }
+    table{
+        margin:0px;
+        padding: 0%;
+    }
+
+    th {
+        margin-left: 0px;
+        text-align: left;
+    }
+
+    td {
+        text-align: left;
+        font-size: 30px;
+    }
+
+    .header {
+        font-size: 30px;
+        padding: 10px;
+    }
+    .row{
+    background-color: rgb(182, 170, 170);}
+.indice,.stocks{
+    background-color: rgb(235, 240, 241);
+
+}
+    .row {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    h1{
+        font-size: 60px;
+    }
+    #change
+    {
+        align-items: center;
+    }
+    /* }
+    progress{
+        background-color: aquamarine;
+    }
+progress::before {
+   content: "Loading: " attr(value) "%";
+   position: absolute;
+   width: 100%;
+   text-align: center;
+   font-size: 18px;
+   color: rgb(44, 250, 72);
+}
+    progress::-webkit-progress-bar {
+   background-color: green;
+}
+progress::-webkit-progress-value {
+   background-color: red;
+} */
+
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #c2c2c2;
+  position:sticky;
+  top: 2px;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav .search-container {
+  float: right;
+  margin-right: 200px;
+  /* width: 310px; */
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding:6px 8px;
+  margin-top: 8px;
+  margin-right: 16px;
+  margin-left: 0px;
+  background: #0008f9;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  color: White;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+    /* width:250px; */
+  }
+}
+.topnav > .active > a { 
+    background-color: color ; 
+}
+#submit{
+/* border-radius: 15px; */
+padding-right: 10px;
+margin-left: 20px;
+}
+</style>
+
+<body>
+    <div class="topnav">
+  
+        <a  href="/home.html">Home</a>
+       
+       <a href="/contact.html">Contact Us</a>
+       <a href="/about.html">About</a>
+       <a href="/login.html">Register</a>
+       <a href="/terms.html">T & C</a>
+       <!-- <a href="/member.html">Membership</a> -->
+     <a href="/member.html">Membership</a>
+       <div class="search-container">
+         <form action="/action_page.php">
+           <input type="text" placeholder="&#128269 Search Stocks,Indices" name="search">
+           <button id="submit">Submit</button>
+         </form>
+       </div>
+     </div>
+    <div class="indices">
+        <h1>Indices</h1>
+        <table class="indice" style="width:80%">
+            <tr class="row">
+                <th class="header">Name</th>
+                <th class="header">last</th>
+                <th class="header">high</th>
+                <th class="header">low</th>
+                <!-- <th class="header">Chg%</th> -->
+                <th class="header">Chg</th>
+            </tr>
+            <tr class="rows">
+                <td>Nifty 50</td>
+                <td>19,330</td>
+                <td>19,530</td>
+                <td>19,130</td>
+                <!-- <td> <label for="file"></label>-8.5%
+                    <progress id="file" value="9" max="100"> </progress> -->
+                </td>
+                <td>165</td>
+            </tr>
+            <tr class="rows">
+                <td>BSE sensex</td>
+                <td>65,280</td>
+                <td>65,898</td>
+                <td>65,298</td>
+                <!-- <td> <label for="file">-7.7%</label>
+                    <progress id="file" value="8" max="100"> 32% </progress> -->
+                </td>
+                <td>107</td>
+            </tr>
+            <tr class="rows">
+                <td>BSE sensex</td>
+                <td>65,280</td>
+                <td>65,898</td>
+                <td>65,298</td>
+                <!-- <td> <label for="file">-7.7%</label>
+                    <progress id="file" value="7.7" max="100"> 8% </progress> -->
+                </td>
+                <td>237</td>
+            </tr>
+            <tr class="rows">
+                <td>India VIX</td>
+                <td>11.5325</td>
+                <td>12.7</td>
+                <td>11.08</td>
+                <!-- <td> <label for="file">-20%</label>
+                    <progress id="file" value="20" max="100"> 20% </progress> -->
+                </td>
+                <td>154</td>
+            </tr>
+            <tr class="rows">
+                <td>Nifty Bank</td>
+                <td>44,280</td>
+                <td>46,898</td>
+                <td>40,298</td>
+                <!-- <td> <label for="file">-9.7%</label>
+                    <progress id="file" value="10" max="100"> 10% </progress> -->
+                </td>
+                <td>124</td>
+            </tr>
+        </table>
+    </div>
+    <div class="stock">
+        <h1>Stocks</h1>
+        <table class="stocks" style="width:80%">
+            <tr class="row">
+                <th class="header">
+                    Name </th>
+                <th class="header">LTP</th>
+                <th class="header" id="change">%chg</th>
+                <th class="header">Volume</th>
+                <th class="header">Buy price</th>
+                <th class="header">Sell price</th>
+            </tr>
+            <tr>
+                <td>Adani Enterprise</td>
+                <td>2,379</td>
+                <td style="color: red;">-0.97</td>
+                <td>1,823,645</td>
+                <td>2,378</td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td>Adani Ports</td>
+                <td>2,379</td>
+                                    <td>-0.97</td>
+                <td>1,823,645</td>
+                <td>2,378</td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td>Apollo Hospital</td>
+                <td>2,379</td>
+                <td style="color: red;">-0.97</td>
+                <td>1,823,645</td>
+                <td>2,378</td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td>Asain Paints</td>
+                <td>2,379</td>
+                <td>-0.97</td>
+                <td>1,823,645</td>
+                <td>2,378</td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td>Axis Bank</td>
+                <td>2,379</td>
+                <td style="color: rgb(0, 235, 0);">3.7</td>
+                <td>1,823,645</td>
+                <td>2,378</td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td>Bajaj Auto</td>
+                <td>2,379</td>
+                <td style="color: red;">-0.97</td>
+                <td>1,823,645</td>
+                <td>2,378</td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td>Bajaj Finance</td>
+                <td>2,379</td>
+                <td>-0.97</td>
+                <td>1,823,645</td>
+                <td>2,378</td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td>Bajaj Finserv</td>
+                <td>2,379</td>
+                <td style="color: rgb(0, 235, 0);">2.7</td>
+                <td>1,823,645</td>
+                <td>2,378</td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td>BPCL</td>
+                <td>2,379</td>
+                <td style="color:  rgb(0, 235, 0);">7</td>
+                <td>1,823,645</td>
+                <td>2,378</td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td>Bharti Airtel</td>
+                <td>2,379</td>
+                <td style="color: red;">-0.97</td>
+                <td>1,823,645</td>
+                <td>2,378</td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td>Britannia</td>
+                <td>2,379</td>
+                <td style="color: red;">-0.97</td>
+                <td>1,823,645</td>
+                <td>2,378</td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td>Cipla</td>
+                <td>2,379</td>
+                <td style="color: rgb(0, 235, 0);">7</td>
+                <td>1,823,645</td>
+                <td>2,378</td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td>Coal India</td>
+                <td>2,379</td>
+                <td style="color: red;">-0.97</td>
+                <td>1,823,645</td>
+                <td>2,378</td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td>Divis lab</td>
+                <td>2,379</td>
+                <td>-0.97</td>
+                <td>1,823,645</td>
+                <td>2,378</td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td>HDFC Bank</td>
+                <td>2,379</td>
+                <td style="color: rgb(0, 235, 0);">2.97</td>
+                <td>1,823,645</td>                <td>2,378</td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td>HDFC Life</td>
+                <td>2,379</td>
+                <td style="color: red;">-0.97</td>
+                <td>1,823,645</td>
+                <td>2,378</td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td>ICICI Bank</td>
+                <td>2,379</td>
+                <td style="color:  rgb(0, 235, 0);">0.97</td>
+                <td>1,823,645</td>
+                <td>2,378</td>
+                <td>0.00</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script>
+    $(function(){
+      $("#nav-placeholder").load("navbar.html");
+    });
+    
+
+
+    </script>
+</html>
